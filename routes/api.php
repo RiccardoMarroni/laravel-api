@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Api\ProjectController;
+use App\Http\Controllers\Admin\TechnologyControllerController;
 use App\Http\Controllers\Mail\PortfolioContactController;
+use App\Models\Technology;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +26,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('projects', [ProjectController::class, 'index']);
+// Route::get('tecnology', [TechnologyController::class, 'index']);
 Route::get('projects/{project:slug}', [ProjectController::class, 'show']);
 
 // remember to remove before the productio phase
